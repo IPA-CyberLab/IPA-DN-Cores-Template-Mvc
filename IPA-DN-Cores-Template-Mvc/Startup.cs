@@ -51,11 +51,14 @@ namespace APP_NAME_HERE
 
             // リクエスト数制限機能を追加
             services.AddHttpRequestRateLimiter<HttpRequestRateLimiterHashKeys.SrcIPAddress>(_ => { });
-            
+
             ////// Cookie 認証機能を追加
             //EasyCookieAuth.LoginFormMessage.TrySet("ログインが必要です。");
             //EasyCookieAuth.AuthenticationPasswordValidator = StartupHelper.SimpleBasicAuthenticationPasswordValidator;
             //EasyCookieAuth.ConfigureServices(services, !StartupHelper.ServerOptions.AutomaticRedirectToHttpsIfPossible);
+
+            // Razor ページを追加
+            services.AddRazorPages();
 
             // MVC 機能を追加
             services.AddControllersWithViews()
